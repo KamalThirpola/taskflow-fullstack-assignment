@@ -8,24 +8,56 @@ const app = express();
 
 const PORT = 3000;
 
-// Middleware
-app.use(cors());
+/* =========================================================
+   MIDDLEWARE
+========================================================= */
+
+app.use(
+  cors({
+    origin: true,
+    methods: [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE",
+      "OPTIONS",
+    ],
+    allowedHeaders: [
+      "Content-Type",
+    ],
+  })
+);
+
 app.use(express.json());
 
-// Routes
-app.use("/api/boards", boardRoutes);
-app.use("/api/tasks", taskRoutes);
+/* =========================================================
+   TEST ROUTE
+========================================================= */
 
-// Health check
 app.get("/", (_req, res) => {
   res.json({
     message: "TaskFlow API is running",
   });
 });
 
-// Start server
+/* =========================================================
+   ROUTES
+========================================================= */
+
+app.use("/api/boards", boardRoutes);
+
+console.log("BOARD ROUTES LOADED");
+
+app.use("/api/tasks", taskRoutes);
+
+console.log("TASK ROUTES LOADED");
+
+/* =========================================================
+   START SERVER
+========================================================= */
+
 app.listen(PORT, () => {
-  console.log(`TaskFlow API running on http://localhost:${PORT}`);
-  console.log("BOARD ROUTES LOADED");
-  console.log("TASK ROUTES LOADED");
+  console.log(
+    `TaskFlow API running on http://localhost:${PORT}`
+  );
 });
