@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment
+.env
+.env.*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backend local data
+backend/data/
+
+# Logs
+*.log
+
+# OS/editor files
+.DS_Store
+.vscode/

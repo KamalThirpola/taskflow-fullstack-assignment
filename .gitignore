@@ -1,0 +1,23 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Database / local data
+backend/data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment files
+.env
+*.env
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
