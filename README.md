@@ -43,10 +43,8 @@ Approximately [14] hours were spent designing, implementing, testing, and debugg
 ### What I Learned
 I learned more about connecting a React frontend to an Express/TypeScript backend and making sure changes persist correctly in the SQLite database.
 
-[5:43 pm, 15/08/2026] Kamal Thirpola: ## Setup
-
+## Setup
 ### Backend
-
 ```bash
 cd backend
 npm install
